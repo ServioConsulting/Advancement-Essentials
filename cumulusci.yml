@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.14.0'
+project:
+    name: Advancement-Essentials
+    package:
+        name:  n
+        api_version: '48.0'
+    dependencies:
+        - github: 'https://github.com/SalesforceFoundation/GEM'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Advancement-Essentials/tests
+            options:
+                outputdir: robot/Advancement-Essentials/results
+
+    robot_testdoc:
+        options:
+            path: robot/Advancement-Essentials/tests
+            output: robot/Advancement-Essentials/doc/Advancement-Essentials_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
